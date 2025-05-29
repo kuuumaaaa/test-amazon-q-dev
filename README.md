@@ -41,31 +41,43 @@ You can also use the application in command-line mode:
 ```bash
 # Add a new todo item
 python todo.py add "Buy groceries"
+# or
+python main.py add "Buy groceries"
 
 # List all todo items
 python todo.py list
+# or
+python main.py list
 
 # Mark a todo item as completed
 python todo.py complete 1
+# or
+python main.py complete 1
 
 # Delete a todo item
 python todo.py delete 2
+# or
+python main.py delete 2
 
 # Show help information
 python todo.py help
+# or
+python main.py help
 ```
 
 ## File Structure
 
 - `todo.py` - The main application file with the CLI interface
+- `main.py` - An alternative entry point for the application
 - `todo_manager.py` - A class to manage todo items
 - `todo_item.py` - A class representing a single todo item
 - `test_todo.py` - Unit tests for the application
+- `test_main.py` - Unit tests for the main module
 
 ## Running Tests
 
 Run the unit tests with:
 
 ```bash
-python -m unittest test_todo.py
+python -m unittest test_todo.py test_main.py
 ```
