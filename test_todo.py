@@ -5,8 +5,10 @@ Unit tests for the Todo App.
 import unittest
 import os
 import json
+import sys
 from todo_item import TodoItem
 from todo_manager import TodoManager
+import main
 
 class TestTodoItem(unittest.TestCase):
     """Test cases for the TodoItem class."""
@@ -160,4 +162,10 @@ class TestTodoManager(unittest.TestCase):
         self.assertFalse(todos[1].completed)
 
 if __name__ == "__main__":
-    unittest.main()
+    # Check if command line arguments are provided
+    if len(sys.argv) > 1:
+        # If arguments are provided, redirect to main.py
+        main.main()
+    else:
+        # Otherwise, run the tests
+        unittest.main()
